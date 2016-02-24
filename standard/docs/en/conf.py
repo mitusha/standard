@@ -297,7 +297,7 @@ source_parsers = {
 
 import standard_theme
 
-html_theme = "standard_theme"
+html_theme = "classic"
 
 html_theme_path = [standard_theme.get_html_theme_path()]
 
