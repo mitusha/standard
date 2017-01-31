@@ -853,7 +853,7 @@
         "Amendment": {
             "title":"Amendment",
             "type": "object",
-            "title": "Amendment information",
+            "description": "Amendment information",
             "properties": {
                 "date": {
                     "title": "Amendment date",
