@@ -3,26 +3,26 @@ import json
 from collections import OrderedDict
 import copy
 
-version_template = OrderedDict({
-    "type": "array",
-    "items": {
-        "properties": {
-            "releaseDate": {
-                "format": "date-time",
+version_template = OrderedDict([
+    ("type", "array"),
+    ("items", OrderedDict([
+        ("properties", OrderedDict([
+            ("releaseDate", OrderedDict([
+                ("format", "date-time"),
+                ("type", "string")
+            ])),
+            ("releaseID", {
                 "type": "string"
-            },
-            "releaseID": {
-                "type": "string"
-            },
-            "value": {
-            },
-            "releaseTag": {
-                "type": "array",
-                "items": {"type": "string"}
-            }
-        }
-   }
-})
+            }),
+            ("value", {
+            }),
+            ("releaseTag", OrderedDict([
+                ("type", "array"),
+                ("items", {"type": "string"})
+            ]))
+        ]))
+   ]))
+])
 
 def add_versions(schema, location=''):
     for key, value in list(schema['properties'].items()):
@@ -36,7 +36,7 @@ def add_versions(schema, location=''):
         if mergeStrategy == 'overwrite':
             continue
         if prop_type == ["string", "null"] and "enum" not in value:
-            new_value = {}
+            new_value = OrderedDict()
             format = value.get('format')
             if format == 'uri':
                 new_value["$ref"] = "#/definitions/StringNullUriVersioned"
@@ -71,12 +71,12 @@ def add_versions(schema, location=''):
 
             
 def add_string_definitions(schema):
-    for item, format in {"StringNullUriVersioned": "uri", 
-                         "StringNullDateTimeVersioned": "date-time",
-                         "StringNullVersioned": None}.items():
+    for item, format in [("StringNullUriVersioned", "uri"), 
+                         ("StringNullDateTimeVersioned", "date-time"),
+                         ("StringNullVersioned", None)]:
         version = copy.deepcopy(version_template)
         version_properties = version["items"]["properties"]
-        version_properties["value"] = {"type": ["string", "null"]}
+        version_properties["value"] = OrderedDict([("type", ["string", "null"])])
         if format:
             version_properties["value"]["format"] = format
         schema['definitions'][item] = version
@@ -96,7 +96,7 @@ def get_versioned_validation_schema(versioned_release):
 
     definitions = versioned_release['definitions']
 
-    new_definitions = {}
+    new_definitions = OrderedDict()
     for key, value in copy.deepcopy(versioned_release['definitions']).items():
         new_definitions[key + 'Unversioned'] = value
 
@@ -116,14 +116,6 @@ def get_versioned_validation_schema(versioned_release):
     add_versions(versioned_release)
 
     versioned_release['properties']["ocid"] = ocid
-
-    ### these can be deleted just here to maintain order as before
-    definitions['IdentifierUnversioned'] = new_definitions["IdentifierUnversioned"]
-    definitions['ClassificationUnversioned'] = new_definitions["ClassificationUnversioned"]
-    definitions['AddressUnversioned'] = new_definitions["AddressUnversioned"]
-    definitions['ContactPointUnversioned'] = new_definitions["ContactPointUnversioned"]
-    definitions['OrganizationUnversioned'] = new_definitions["OrganizationUnversioned"]
-    ### end block that can be deleted
 
     definitions.update(new_definitions)
     add_string_definitions(versioned_release)
