@@ -10,11 +10,11 @@ However, there are many use cases where publishers and users will want to work w
 
 JSON stands for Javascript Object Notation, and is a format widely used for the exchange of data on the web. The JSON schema language provides validation tools for working with JSON data.
 
+Valid JSON serializations of OCDS data MUST follow the [I-JSON (Internet JSON)specification from RFC7493](https://tools.ietf.org/html/rfc7493) which requires [UTF-8 encoding](https://en.wikipedia.org/wiki/UTF-8) and introduces a number of constrains and recommendations for handling numbers, objects and dates. 
+
 ### Generating JSON
 
 Most programming languages provide tools for output data as JSON. 
-
-The [OCDS Mapper](https://github.com/open-contracting/mapper) tool can convert from flat CSV files to structured OCDS data based on a mapping template. 
 
 [A range of tools](http://json-schema.org/implementations.html) are available for working with [JSON-Schema](http://json-schema.org/), including validation and form generation tools. 
 

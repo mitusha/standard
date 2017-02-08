@@ -1040,7 +1040,6 @@
                                 "type": "string"
                             },
                             "value": {
-                                "minimum": 0,
                                 "type": [
                                     "integer",
                                     "null"
@@ -1320,8 +1319,7 @@
                                 "type": [
                                     "number",
                                     "null"
-                                ],
-                                "minimum": 0
+                                ]
                             },
                             "releaseTag": {
                                 "type": "array",
@@ -2109,7 +2107,6 @@
                     "uniqueItems": true
                 },
                 "quantity": {
-                    "minimum": 0,
                     "type": [
                         "integer",
                         "null"
@@ -2375,8 +2372,7 @@
                     "type": [
                         "number",
                         "null"
-                    ],
-                    "minimum": 0
+                    ]
                 },
                 "currency": {
                     "type": [

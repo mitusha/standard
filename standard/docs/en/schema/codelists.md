@@ -39,11 +39,18 @@ This list can be extended in consultation with IATI.
 
 ### Document Type
 
-This list provides details of the documents that publishers may wish to provide at various points their contracting process.
+The following list describes documents and documentation recommended for publication as part of an open contracting implementation. The codelist indicates whether documents are considered 'basic', 'intermediate' or 'advanced', and the section of an OCDS release they are most likely to be applicable within. 
+
+The code descriptions are neccessarily broad, to cover their usage in a range of contracting processes, including for goods, works and services, and in other contexts, such as public private partnerships, infrastructure or concession contracts. 
+
+Implementers may wish to map their existing document codes to this list, or, if using this list within a user-interface, to re-write the codelist titles and descriptions apporiately for the context they are being used in. 
+
+This is an open codelist, and additional entries can be included with a x\_ prefix. 
 
 ```eval_rst
 .. csv-table::
    :header-rows: 1
+   :widths: 10 10 10 20 50
    :file: standard/schema/codelists_translated/documentType.csv
 ```
 
@@ -95,7 +102,7 @@ Contracting processes may be formed under a number of different processes. Curre
 
 ### Tender Status
 
-The `tender.status` field is used to indicate the current status of a tender process.
+The `tender.status` field is used to indicate the current status of a tender process. The following options are available:
 
 ```eval_rst
 .. csv-table::
@@ -137,7 +144,9 @@ Contracts can move through multiple states. Releases over time may update the st
 
 ### Currency
 
-OCDS uses the ISO 3-letter currency codes maintained in [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217).
+The currency for each amount should always be specified using the uppercase 3-letter currency code from [ISO4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
+
+A full list is available from the ISO. 
 
 ### Milestone Status
 

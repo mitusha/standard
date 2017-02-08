@@ -96,6 +96,11 @@ It may contain details of a forthcoming process to receive and evaluate proposal
    :file: standard/docs/field_definitions/release-tender.csv
 ```
 
+```eval_rst
+.. extensionlist:: The following extensions are available for the tender section
+   :list: tender
+```
+
 Notes: 
 
 * ```tender.id``` - see the [identifiers guidance](../../identifiers/#tender_award_and_contract) for further information on the tender identifier. In most cases this can be the same as the ocid.
@@ -109,6 +114,14 @@ Notes:
 * ```documents``` - supporting documentation should be attached to the tender. This may include official legal notices of tender, as well as technical specifications, evaluation criteria, and, as a tender process progresses, clarifications, replies to queries and copies of bids submitted or listings of shortlisted firms. See the [attachments](#attachments) section for more details of how to include documents, and consult the [documentType codelist](codelists.md/#document-type) for suggested documents to include for basic, intermediate or advanced publication.
 
 Information on bidders against a contract will be handled by an [extension](conformance_and_extensions.md) during the period of the standard release candidate. Publishers wishing to provide detailed information on bidders should [contact support](../support/index.md).
+
+
+### Bids
+
+```eval_rst
+.. extensionlist:: The optional bids extension can be used to provide summary and detailed information about bids.
+   :list: bids
+```
 
 ### Award
 
@@ -415,7 +428,7 @@ A contract for ‘Software consultancy services’ may be published in a release
 
 ```eval_rst
 
-.. jsoninclude:: example/language.json
+.. jsoninclude:: docs/en/examples/language.json
    :jsonpointer: 
    :expand: 
 
@@ -427,7 +440,7 @@ A contract for ‘Software consultancy services’ may be published in a release
 .. csv-table::
    :header-rows: 1
    :widths: 20 65 15
-   :file: standard/example/language.csv
+   :file: standard/docs/en/examples/language.csv
 ```
 
 ## Release handling
