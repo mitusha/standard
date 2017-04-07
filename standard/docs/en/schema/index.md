@@ -8,6 +8,16 @@ In this section you will find the [full JSON schema](release.md) along with the 
 
 The [release schema reference](reference.md) page provides guidance on using each of the sections and building blocks in the schema, and the [record schema reference](records_reference.md) provides additional information on publishing compiled and versioned records.
 
+
+
+
+```eval_rst
+
+.. jsonschema:: ../../../schema/release-schema.json
+
+```
+
+
 <!-- TODO: Consider adding diagram here -->
 
 ```eval_rst
