@@ -53,25 +53,12 @@ OCDS 1.1 includes a ```title``` and ```description``` field at the top level of 
 
 We recommend keeping descriptions to one paragraph or less.
 
-
-
 ```eval_rst
 
 .. jsonschema:: ../../../schema/release-schema.json
-    :properties: title,description
-
+    :include_paths: title,description
 
 ```
-
-
-
-
-
-
-
-
-
-
 
 #### Sector classification
 
@@ -82,6 +69,14 @@ This can be cross-walked to most other PPP clasification schemes in use, and so 
 Additional classificaiton schemes can also be provided, such as project classification against the Sustainable Development Goals (SDGs), or against national frameworks. 
 
 **Discussion:** See [#22](https://github.com/open-contracting/public-private-partnerships/issues/22) for further sector classification discussions.
+
+
+```eval_rst
+
+.. jsonschema:: ../../../schema/release-schema.json
+    :include_paths: planning/project/sector,planning/project/additionalClassifications
+
+```
 
 ##### Representation
 
