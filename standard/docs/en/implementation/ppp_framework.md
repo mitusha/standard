@@ -56,7 +56,7 @@ We recommend keeping descriptions to one paragraph or less.
 ```eval_rst
 
 .. jsonschema:: ../../../schema/release-schema.json
-    :include_paths: title,description
+    :include: title,description
 
 ```
 
@@ -74,7 +74,7 @@ Additional classificaiton schemes can also be provided, such as project classifi
 ```eval_rst
 
 .. jsonschema:: ../../../schema/release-schema.json
-    :include_paths: planning/project/sector,planning/project/additionalClassifications
+    :include: planning/project/sector,planning/project/additionalClassifications
 
 ```
 
