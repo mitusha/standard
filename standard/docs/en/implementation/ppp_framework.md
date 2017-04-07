@@ -53,6 +53,26 @@ OCDS 1.1 includes a ```title``` and ```description``` field at the top level of 
 
 We recommend keeping descriptions to one paragraph or less.
 
+
+
+```eval_rst
+
+.. jsonschema:: ../../../schema/release-schema.json
+    :properties: title,description
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
 #### Sector classification
 
 Projects should be classified using the UN Classification of the Functions of Government Scheme (COFOG). 
